@@ -1,0 +1,177 @@
+$collapseWidth: 1em;
+$expandWidth: 70em;
+$animationTime: .5s;
+$defaultPadding: .5em;
+$blackish: #444;
+$whiteish: #EEE;
+
+html {
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  font-family: monospace;
+  font-size: 1.2em;
+  letter-spacing: .05em;
+  -webkit-text-size-adjust: 100%;
+  background-color: black;
+  color: $whiteish;
+  overflow: hidden;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a, a:visited, a:hover, a:link {
+  text-decoration: underline;
+  color: inherit;
+}
+
+h1 {
+  padding: 0;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+h2 {
+  padding-bottom: 0;
+  border-bottom: 1px solid;
+}
+
+h3 {
+  font-size: 1.2em;
+}
+
+h4 {
+  font-size: 1em;
+  padding-left: $defaultPadding;
+}
+
+#main {
+  display: flex;
+  height: calc(100vh - 2em);
+  width: 100vw;
+
+  div {
+    width: $collapseWidth;
+    overflow: hidden;
+    cursor: pointer;
+    padding: $defaultPadding;
+    min-width: $collapseWidth;
+
+    span {
+      font-size: 1.5em;
+      word-wrap: break-word;
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    >section {
+      display: none;
+
+      p {
+        padding: 0 $defaultPadding 0 $defaultPadding;
+      }
+    }
+  }
+}
+
+#thirdgift {
+  background-color: #1e1200;
+  color: #ffe900;
+}
+
+#wallOfFame {
+  background-color: $whiteish;
+  color: $blackish;
+}
+
+#secondary {
+  height: 2em;
+  padding: $defaultPadding;
+}
+
+#roleTerminal {
+  background-color: #001e15;
+  color: #00ffcc;
+  text-shadow: 1px 1px 2px #008766;
+}
+
+.expand {
+  animation: expand $animationTime ease-out;
+  animation-fill-mode: forwards;
+  cursor: default !important;
+  overflow-y: auto !important;
+
+  >section {
+    display: inline !important;
+  }
+
+  span {
+    display: none;
+  }
+}
+
+.collapse {
+  animation: collapse $animationTime ease-out;
+  animation-fill-mode: forwards;
+}
+
+.example {
+  margin-left: 1em;
+}
+
+.example:before {
+  content: "Example: ";
+}
+
+.verticalCollapse {
+  height: 0;
+  overflow: hidden;
+}
+
+@media (max-width: 500px) {
+  html {
+    overflow: scroll;
+  }
+
+  #main {
+    display: inline;
+
+    div {
+      width: 100%;
+    }
+  }
+
+  .expand {
+    animation: none;
+  }
+
+  .collapse {
+    animation: none;
+  }
+}
+
+@keyframes expand {
+  from {
+    width: $collapseWidth;
+  }
+  to {
+    width: $expandWidth;
+  }
+}
+
+@keyframes collapse {
+  from {
+    width: $expandWidth;
+  }
+  to {
+    width: $collapseWidth;
+  }
+}

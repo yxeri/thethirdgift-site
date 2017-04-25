@@ -1,0 +1,8 @@
+.idea
+.vscode
+.DS_store
+npm-debug.log
+docker-compose.override.yml
+out/
+.travis/deploy_key
+node_modules
