@@ -1,0 +1,52 @@
+@font-face {
+  font-family: CL-light;
+  src: local("CL-light"), url(../fonts/cl-light.ttf) format("truetype");
+}
+
+body {
+  font-family: CL-light;
+  font-size: 1.6em;
+  text-transform: uppercase;
+  background-color: #010101;
+  color: #48b350;
+  text-shadow: 0px 0px 20px #48b350;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: .18em;
+  word-spacing: .28em
+}
+
+#draw {
+  position: absolute;
+}
+
+#text {
+  margin-left: 15em;
+  padding-top: 1em;
+}
+
+p {
+  span {
+    display: inline-block;
+  }
+
+  svg {
+    top: -.5em;
+  }
+}
+
+svg {
+  position: absolute;
+  left: 0;
+}
+
+p {
+  -webkit-transform: scale(1.4, .8);
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.none {
+  display: none;
+}
