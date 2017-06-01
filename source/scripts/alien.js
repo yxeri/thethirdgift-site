@@ -8,8 +8,8 @@ for (let i = 0; i < paragraphs.length; i+= 1) {
 }
 
 const lines = Array.from(paragraphs).map((paragraph) => {
-  const draw = SVG(paragraph.getAttribute('id')).size(basePosition - 1, '1.7em');
-  const line = draw.rect('1em', '.4em').attr({ x: basePosition, y: '.7em', fill: '#d2fed3' });
+  const draw = SVG(paragraph.getAttribute('id')).size(basePosition - 1, '1.9em');
+  const line = draw.rect('1em', '.4em').attr({ x: basePosition, y: '.8em', fill: '#d2fed3' });
 
   return { drawArea: draw, paragraph, line, text: paragraph.firstElementChild.innerText };
 });
@@ -29,14 +29,14 @@ function animate(lines) {
       .queue(() => {
         const marker = lineObj
           .drawArea
-          .rect('.2em', '1.7em')
+          .rect('.2em', '1.9em')
           .attr({ x: 0, y: 0, fill: '#d2fed3' });
 
         marker.animate({ duration: lineAnimationSpeed, ease: '-' })
           .move(lineLength, 0)
           .once(1, () => { marker.addClass('hide'); });
 
-        lineObj.line.attr({ y: 0 }).height('1.7em');
+        lineObj.line.attr({ y: 0 }).height('1.9em');
         lineObj.line.style({ fill: '#000000' });
         lineObj.paragraph.firstElementChild.classList.remove('hide');
         lineObj.line.fx.dequeue();

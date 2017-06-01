@@ -11,8 +11,8 @@ for (var i = 0; i < paragraphs.length; i += 1) {
 }
 
 var lines = Array.from(paragraphs).map(function (paragraph) {
-  var draw = SVG(paragraph.getAttribute('id')).size(basePosition - 1, '1.7em');
-  var line = draw.rect('1em', '.4em').attr({ x: basePosition, y: '.7em', fill: '#d2fed3' });
+  var draw = SVG(paragraph.getAttribute('id')).size(basePosition - 1, '1.9em');
+  var line = draw.rect('1em', '.4em').attr({ x: basePosition, y: '.8em', fill: '#d2fed3' });
 
   return { drawArea: draw, paragraph: paragraph, line: line, text: paragraph.firstElementChild.innerText };
 });
@@ -28,13 +28,13 @@ function animate(lines) {
     var lineLength = lineObj.paragraph.firstElementChild.clientWidth;
 
     lineObj.line.animate({ duration: 150, ease: '-' }).width(basePosition).move(0, '.7em').queue(function () {
-      var marker = lineObj.drawArea.rect('.2em', '1.7em').attr({ x: 0, y: 0, fill: '#d2fed3' });
+      var marker = lineObj.drawArea.rect('.2em', '1.9em').attr({ x: 0, y: 0, fill: '#d2fed3' });
 
       marker.animate({ duration: lineAnimationSpeed, ease: '-' }).move(lineLength, 0).once(1, function () {
         marker.addClass('hide');
       });
 
-      lineObj.line.attr({ y: 0 }).height('1.7em');
+      lineObj.line.attr({ y: 0 }).height('1.9em');
       lineObj.line.style({ fill: '#000000' });
       lineObj.paragraph.firstElementChild.classList.remove('hide');
       lineObj.line.fx.dequeue();
