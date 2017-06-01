@@ -8,7 +8,7 @@ for (let i = 0; i < paragraphs.length; i+= 1) {
 }
 
 const lines = Array.from(paragraphs).map((paragraph) => {
-  const draw = SVG(paragraph.getAttribute('id')).size(basePosition, '1.7em');
+  const draw = SVG(paragraph.getAttribute('id')).size(basePosition - 1, '1.7em');
   const line = draw.rect('1em', '.4em').attr({ x: basePosition, y: '.7em', fill: '#d2fed3' });
 
   return { drawArea: draw, paragraph, line, text: paragraph.firstElementChild.innerText };

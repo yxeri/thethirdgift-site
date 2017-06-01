@@ -11,7 +11,7 @@ for (var i = 0; i < paragraphs.length; i += 1) {
 }
 
 var lines = Array.from(paragraphs).map(function (paragraph) {
-  var draw = SVG(paragraph.getAttribute('id')).size(basePosition, '1.7em');
+  var draw = SVG(paragraph.getAttribute('id')).size(basePosition - 1, '1.7em');
   var line = draw.rect('1em', '.4em').attr({ x: basePosition, y: '.7em', fill: '#d2fed3' });
 
   return { drawArea: draw, paragraph: paragraph, line: line, text: paragraph.firstElementChild.innerText };
