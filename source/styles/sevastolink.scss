@@ -50,10 +50,39 @@ body {
   height: inherit;
 }
 
-.logo {
-  font-style: italic;
+#loggedInLoading {
+  padding-top: 7em;
+  color: $secondLoginColor;
+  font-size: 2em;
+  text-align: center;
+
+  span {
+    display: block;
+  }
+
+  #loadingBar {
+    margin-top: 10em;
+  }
+
+  .logo {
+    font-size: 4em;
+    font-style: italic;
+  }
+
+  .subLogo {
+    margin-left: 10em;
+  }
+
+  .outerBar {
+    border: 1px solid $secondLoginColor;
+  }
 }
+
 
 .hide {
   display: none;
+}
+
+.thinner {
+  -webkit-font-smoothing: antialiased;
 }
