@@ -1,0 +1,177 @@
+{
+  "cards": [
+    {
+      "name": "Tear Gas",
+      "type": "Action",
+      "subType": "Action",
+      "description": [
+        "Discard cards from the top of your Inventory until you discard a Weapon.",
+        "If you Discarded a Weapon, your character, your character deals an additional 10 Damage during this turn for each card you Discarded."
+      ],
+      "unique": false,
+      "cost": 70,
+      "trashAfterUse": false,
+      "ammoRequirement": {
+        "minimum": 0,
+        "isAdjustable": false
+      },
+      "damage": {
+        "minimum": 30,
+        "isAdjustable": true
+      },
+      "extra": {
+        "actions": {
+          "amount": 1,
+          "guaranteed": true
+        },
+        "buys": {
+          "amount": 0,
+          "guaranteed": false
+        },
+        "explores": {
+          "amount": 0,
+          "guaranteed": false
+        }
+      },
+      "tags": ["weaponFinder"]
+    }, {
+      "name": "Msater of Unlocking",
+      "type": "Action",
+      "subType": "Action",
+      "description": [
+        "Each other Player Reveals the top card of their Inventory.",
+        "You can gain 1 of the Revealed Weapons.",
+        "All of the other Revealed cards are discarded afterwards."
+      ],
+      "unique": false,
+      "cost": 30,
+      "trashAfterUse": false,
+      "ammoRequirement": {
+        "minimum": 0,
+        "isAdjustable": false
+      },
+      "damage": {
+        "minimum": 0,
+        "isAdjustable": false
+      },
+      "extra": {
+        "actions": {
+          "amount": 1,
+          "guaranteed": true
+        },
+        "buys": {
+          "amount": 0,
+          "guaranteed": false
+        },
+        "explores": {
+          "amount": 0,
+          "guaranteed": false
+        }
+      },
+      "tags": ["pvp", "cardStealer"]
+    }, {
+      "name": "Uroboros Injection",
+      "type": "Action",
+      "subType": "Action",
+      "description": [
+        "During another Player's turn, when an Infected is Revealed, you can Trash this card from your hand to give it +20 Health to any Revealed Infected during this turn."
+      ],
+      "unique": false,
+      "cost": 60,
+      "trashAfterUse": false,
+      "ammoRequirement": {
+        "minimum": 0,
+        "isAdjustable": false
+      },
+      "damage": {
+        "minimum": 0,
+        "isAdjustable": false
+      },
+      "extra": {
+        "actions": {
+          "amount": 2,
+          "guaranteed": true
+        },
+        "buys": {
+          "amount": 1,
+          "guaranteed": true
+        },
+        "explores": {
+          "amount": 0,
+          "guaranteed": false
+        }
+      },
+      "tags": ["pvp", "enemyBooster"]
+    }, {
+      "name": "The Gathering Darkness",
+      "type": "Action",
+      "subType": "Action",
+      "description": [
+        "Trash this card and choose another Player.",
+        "That Player Reveals their Hand and Trashes an Ammunition with the higehst cost from their Hand.",
+        "That Player moves 1 \"Ammo x10\" Ammunition to their hand for every 10 ammo the Trashed card provided."
+      ],
+      "unique": false,
+      "cost": 50,
+      "trashAfterUse": true,
+      "ammoRequirement": {
+        "minimum": 0,
+        "isAdjustable": false
+      },
+      "damage": {
+        "minimum": 0,
+        "isAdjustable": false
+      },
+      "extra": {
+        "actions": {
+          "amount": 0,
+          "guaranteed": false
+        },
+        "buys": {
+          "amount": 0,
+          "guaranteed": false
+        },
+        "explores": {
+          "amount": 0,
+          "guaranteed": false
+        }
+      },
+      "tags": ["pvp", "deckDiluter"]
+    }, {
+      "name": "The Gathering Darkness",
+      "type": "Action",
+      "subType": "Action",
+      "description": [
+        "Choose another Player.",
+        "That Player Reveales their hand and you select and Discard a Weapon from it (if any).",
+        "Your Character deals and additional X Damage during this turn, where X = the damage of the Discarded Weapon."
+      ],
+      "unique": false,
+      "cost": 70,
+      "trashAfterUse": false,
+      "ammoRequirement": {
+        "minimum": 0,
+        "isAdjustable": false
+      },
+      "damage": {
+        "minimum": 0,
+        "isAdjustable": false
+      },
+      "extra": {
+        "actions": {
+          "amount": 0,
+          "guaranteed": false
+        },
+        "buys": {
+          "amount": 0,
+          "guaranteed": false
+        },
+        "explores": {
+          "amount": 0,
+          "guaranteed": false
+        }
+      },
+      "tags": ["pvp", "weaponBooster"]
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+$blackish: #444;
+$whiteish: #EEE;
+$margin-default: 1.5em;
+$smaller-margin: .2em;
+$smaller-margin-body: .5em;
+
+@font-face {
+  font-family: Dyslexic;
+  src: local("Dyslexic"), url("../fonts/dyslexic.ttf") format("truetype");
+}
+
+body {
+  color: $whiteish;
+  background-color: $blackish;
+  font-family: Dyslexic;
+  font-size: 1em;
+  margin: $margin-default;
+}
+
+h1, h2, h3, h4, h5, h6, h7 {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+}
+
+h2, h3, h4 {
+  border-bottom: 1px solid;
+}
+
+header {
+  margin: 1em 0;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+p {
+  margin: .5em 0;
+}
+
+#main {
+  max-width: 60em;
+}
+
+.topSection {
+  margin-left: $margin-default;
+}
+
+.topArticle {
+  margin-left: $margin-default;
+
+  > * {
+    margin-left: $margin-default;
+
+    header {
+      margin-left: 0;
+    }
+  }
+
+  > header {
+    margin-left: 0;
+  }
+}
+
+.collapse {
+  > * {
+    display: none;
+  }
+
+  header:first-child {
+    display: inherit;
+  }
+}
+
+@media (max-width: 1024px) {
+  body {
+    margin: $smaller-margin-body;
+  }
+
+  .topSection {
+    margin-left: $smaller-margin;
+  }
+
+  .topArticle {
+    margin-left: $smaller-margin;
+
+    > * {
+      margin-left: $smaller-margin;
+
+      header {
+        margin-left: 0;
+      }
+    }
+
+    > header {
+      margin-left: 0;
+    }
+  }
+}
