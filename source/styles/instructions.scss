@@ -42,8 +42,27 @@ p {
   margin: .5em 0;
 }
 
+a, a:visited, a:link, a:active {
+  color: $whiteish;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+a:hover {
+  color: $blackish;
+  background-color: $whiteish;
+  text-decoration: none;
+
+}
+
 #main {
   max-width: 60em;
+}
+
+.m {
+  color: $whiteish;
+  text-decoration: underline;
+  font-weight: bold;
 }
 
 .topSection {
