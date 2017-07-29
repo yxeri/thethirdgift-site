@@ -20,10 +20,11 @@ idButton.addEventListener('click', () => {
 });
 
 function playingChosen() {
-  const videoId = idInput.value;
-  idInput.value = '';
-  player.loadVideoById(videoId);
-  playerBottom.classList.remove('hide');
+  if (!hasStarted) {
+    const videoId = idInput.value;
+    idInput.value = '';
+    player.loadVideoById(videoId);
+  }
 }
 
 function onPlayerReady() {
@@ -38,16 +39,18 @@ function onPlayerStateChange(event) {
       setTimeout(() => {
         player.playVideo();
         playerInnerWrapper.classList.remove('hide');
+        playerBottom.classList.remove('hide');
 
         setTimeout(() => {
           playerBottom.classList.add('hide');
-        }, 2500)
+        }, 3000)
       }, 500);
 
       hasStarted = true;
     }
   } else if (event.data === YT.PlayerState.ENDED) {
-    playerWrapper.classList.add('hide');
+    hasStarted = false;
+    playerInnerWrapper.classList.add('hide');
   }
 }
 
