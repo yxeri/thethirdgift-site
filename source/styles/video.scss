@@ -1,0 +1,25 @@
+body {
+  color: white;
+  background-color: black;
+}
+
+#playerWrapper {
+  position: relative;
+}
+
+#playerInnerWrapper {
+  pointer-events: none;
+}
+
+#playerBottom{
+  height: 4em;
+  background-color: black;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
+}
+
+.hide {
+  display: none;
+}
