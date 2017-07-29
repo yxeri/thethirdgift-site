@@ -69,6 +69,7 @@ window.onYouTubeIframeAPIReady = () => {
       'showinfo': 0,
       'iv_load_polacy': 3,
       'frameborder': 0,
+      'playsinline': 1,
     },
     events: {
       'onReady': onPlayerReady,
