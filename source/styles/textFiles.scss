@@ -23,7 +23,8 @@ h1, h2, h3, h4, h5, h6, h7 {
   font-size: inherit;
 }
 
-h2, h3, h4 {
+h2, h3, h4, h5, h6, h7 {
+  margin-left: .1em;
   border-bottom: 1px solid;
 }
 
@@ -96,6 +97,10 @@ a:hover {
 }
 
 @media (max-width: 1024px) {
+  h2, h3, h4, h5, h6, h7 {
+    margin-left: 0;
+  }
+
   body {
     margin: $smaller-margin-body;
   }
