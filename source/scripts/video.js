@@ -32,7 +32,10 @@ function onPlayerReady() {
 }
 
 function onPlayerStateChange(event) {
-  if (event.data === YT.PlayerState.PLAYING) {
+  if (event.data === -1) {
+    hasStarted = false;
+    playerInnerWrapper.classList.add('hide');
+  } else if (event.data === YT.PlayerState.PLAYING) {
     if (!hasStarted) {
       player.pauseVideo();
 
@@ -44,7 +47,7 @@ function onPlayerStateChange(event) {
         setTimeout(() => {
           playerBottom.classList.add('hide');
         }, 3000)
-      }, 500);
+      }, 900);
 
       hasStarted = true;
     }
