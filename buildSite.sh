@@ -8,7 +8,7 @@ do
   ./node_modules/browserify/bin/cmd.js "$file" -t [ babelify --presets [ es2015 ] --compact='false' ] -o ./scripts/$(basename "$file")
 
   # Minifies transpiled code
-  ./node_modules/uglifyjs/bin/uglifyjs --compress --mangle --output ./scripts/$(basename "$file") -- ./scripts/$(basename "$file")
+  ./node_modules/uglify-js/bin/uglifyjs --compress --mangle --output ./scripts/$(basename "$file") -- ./scripts/$(basename "$file")
 done
 
 # Compiles and compresses sass to css
