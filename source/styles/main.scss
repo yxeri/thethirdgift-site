@@ -4,9 +4,9 @@ $animationTime: .5s;
 $defaultPadding: .5em;
 $blackish: #444;
 $whiteish: #EEE;
+$whiter: #FFF;
 
 html {
-  overflow: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -18,7 +18,7 @@ body {
   -webkit-text-size-adjust: 100%;
   background-color: black;
   color: $whiteish;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 ul {
@@ -27,29 +27,41 @@ ul {
   padding: 0;
 }
 
-a, a:visited, a:hover, a:link {
-  text-decoration: underline;
+a, a:visited a:link {
+  border-bottom: 1px solid;
   color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: $whiter;
+  border-color: $whiter;
 }
 
 h1 {
   padding: 0;
   margin: 0;
   text-transform: uppercase;
+  font-size: 1.5em;
 }
 
 h2 {
   padding-bottom: 0;
   border-bottom: 1px solid;
+  font-size: 1.3em;
 }
 
 h3 {
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
 
 h4 {
   font-size: 1em;
   padding-left: $defaultPadding;
+}
+
+li {
+  padding-bottom: .1em;
 }
 
 #main {
