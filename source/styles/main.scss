@@ -62,12 +62,14 @@ h4 {
 
 li {
   padding-bottom: .2em;
+  padding-left: .2em;
 }
 
 #main {
   display: flex;
   height: calc(100vh - 2em);
-  width: 100vw;
+  width: calc(100vw - .2em);
+  max-width: calc(80em - .2em);
 
   div {
     width: $collapseWidth;
