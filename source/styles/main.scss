@@ -1,10 +1,10 @@
-$collapseWidth: 1em;
-$expandWidth: 70em;
-$animationTime: .5s;
-$defaultPadding: .5em;
-$blackish: #444;
+$blackish: black;
 $whiteish: #EEE;
 $whiter: #FFF;
+$cornerWidth: .6em;
+$fontSize: 1.2em;
+$cornerTransparent: $cornerWidth solid transparent;
+$cornerFill: $cornerWidth solid $blackish;
 
 html {
   -webkit-font-smoothing: antialiased;
@@ -13,20 +13,18 @@ html {
 body {
   margin: 0;
   font-family: monospace;
-  font-size: 1.2em;
-  letter-spacing: .05em;
+  font-size: $fontSize;
   -webkit-text-size-adjust: 100%;
-  background-color: black;
+  background-color: $blackish;
   color: $whiteish;
   overflow-x: hidden;
   font-weight: bold;
-  line-height: 1.2em;
 }
 
 ul {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: #{$cornerWidth / 2};
 }
 
 a, a:visited a:link {
@@ -36,158 +34,78 @@ a, a:visited a:link {
 }
 
 a:hover {
-  color: $whiter;
-  border-color: $whiter;
+  font-weight: bold;
+}
+
+h1, h2, h3, h4 {
+  padding: 0;
+  margin: 0 0 0 $cornerWidth;
+  line-height: 1em;
+}
+
+h1, h2 {
+  font-size: $fontSize;
 }
 
 h1 {
-  padding: 0;
-  margin: 0;
   text-transform: uppercase;
-  font-size: 1.5em;
-}
-
-h2 {
-  padding-bottom: 0;
-  border-bottom: 1px solid;
-  font-size: 1.3em;
-}
-
-h3 {
-  font-size: 1.1em;
-}
-
-h4 {
-  font-size: 1em;
-  padding-left: $defaultPadding;
 }
 
 li {
-  padding-bottom: .2em;
-  padding-left: .2em;
+  padding: #{$cornerWidth / 2} $cornerWidth;
+  background-color: $whiteish;
+  color: $blackish;
+  position: relative;
 }
 
 #main {
   display: flex;
-  height: calc(100vh - 2em);
-  width: calc(100vw - .2em);
-  max-width: calc(80em - .2em);
-
-  div {
-    width: $collapseWidth;
-    overflow: hidden;
-    cursor: pointer;
-    padding: $defaultPadding;
-    min-width: $collapseWidth;
-
-    span {
-      font-size: 1.5em;
-      word-wrap: break-word;
-      text-align: center;
-      text-transform: uppercase;
-      font-weight: bold;
-    }
-
-    >section {
-      display: none;
-
-      p {
-        padding: 0 $defaultPadding 0 $defaultPadding;
-      }
-    }
-  }
+  height: 100%;
+  width: 100%;
+  max-width: 60em;
 }
 
-#thirdgift {
-  background-color: #1e1200;
-  color: #ffe900;
+.title {
+  margin-top: $cornerWidth;
+  padding: 0 .1em;
+  background-color: $blackish;
+  color: $whiteish;
 }
 
-#wallOfFame {
-  background-color: $whiteish;
-  color: $blackish;
+.title:first-child {
+  margin-top: 0;
 }
 
-#secondary {
-  height: 2em;
-  padding: $defaultPadding;
+.upperCorner, .lowerCorner {
+  position: absolute;
+  right: 0;
 }
 
-#roleTerminal {
-  background-color: #001e15;
-  color: #00ffcc;
-  text-shadow: 1px 1px 2px #008766;
+.leftUpperCorner, .leftLowerCorner {
+  position: absolute;
+  left: 0;
 }
 
-.expand {
-  animation: expand $animationTime ease-out;
-  animation-fill-mode: forwards;
-  cursor: default !important;
-  overflow-y: auto !important;
-
-  >section {
-    display: inline !important;
-  }
-
-  span {
-    display: none;
-  }
+.upperCorner {
+  top: 0;
+  border-left: $cornerTransparent;
+  border-top: $cornerFill;
 }
 
-.collapse {
-  animation: collapse $animationTime ease-out;
-  animation-fill-mode: forwards;
+.lowerCorner {
+  bottom: 0;
+  border-left: $cornerTransparent;
+  border-bottom: $cornerFill;
 }
 
-.example {
-  margin-left: 1em;
+.leftUpperCorner {
+  top: 0;
+  border-right: $cornerTransparent;
+  border-top: $cornerFill;
 }
 
-.example:before {
-  content: "Example: ";
-}
-
-.verticalCollapse {
-  height: 0;
-  overflow: hidden;
-}
-
-@media (max-width: 500px) {
-  html {
-    overflow: scroll;
-  }
-
-  #main {
-    display: inline;
-
-    div {
-      width: 100%;
-    }
-  }
-
-  .expand {
-    animation: none;
-  }
-
-  .collapse {
-    animation: none;
-  }
-}
-
-@keyframes expand {
-  from {
-    width: $collapseWidth;
-  }
-  to {
-    width: $expandWidth;
-  }
-}
-
-@keyframes collapse {
-  from {
-    width: $expandWidth;
-  }
-  to {
-    width: $collapseWidth;
-  }
+.leftLowerCorner {
+  bottom: 0;
+  border-right: $cornerTransparent;
+  border-bottom: $cornerFill;
 }
