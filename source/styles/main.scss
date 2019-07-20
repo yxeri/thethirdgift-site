@@ -1,7 +1,7 @@
 $blackish: black;
 $whiteish: #EEE;
 $whiter: #FFF;
-$cornerWidth: .6em;
+$cornerWidth: .5em;
 $padding: #{$cornerWidth / 2};
 $fontSize: 1.2em;
 $cornerTransparent: $cornerWidth solid transparent;
@@ -69,7 +69,7 @@ li {
 }
 
 .title {
-  margin-top: $cornerWidth;
+  margin-top: 1.2em;
   padding: 0 .1em;
   background-color: $blackish;
   color: $whiteish;
